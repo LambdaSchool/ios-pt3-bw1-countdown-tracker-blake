@@ -8,17 +8,30 @@
 
 import Foundation
 
-struct Countdown {
+struct Countdown: Codable {
     //MARK: - Properties
     var title:          String,
-        dateAndTime:    String,
-        cdHasFinished:  Bool
+        dateAndTime:    Date
+    
+    //MARK: - Computed Properties
+    var cdHasFinished: Bool {
+        return dateAndTime <= Date()
+    }
+    
+    var readableInterval: String {
+        let interval = dateAndTime.timeIntervalSinceNow
+        let formatter = DateComponentsFormatter()
+        formatter.unitsStyle = .full
+        formatter.allowedUnits = [.day, .minute, .second]
+        
+        return formatter.string(from: interval) ?? ""
+    }
+    
     
     
     //MARK: - Init
-    init(title: String, dateAndTime: String, cdHasFinished: Bool) {
+    init(title: String, dateAndTime: Date) {
         self.title = title
         self.dateAndTime = dateAndTime
-        self.cdHasFinished = cdHasFinished
     }
 }

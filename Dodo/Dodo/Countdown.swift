@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Countdown: Codable {
+struct Countdown: Codable, Equatable {
     //MARK: - Properties
     var title:          String,
         dateAndTime:    Date
@@ -26,8 +26,6 @@ struct Countdown: Codable {
         
         return formatter.string(from: interval) ?? ""
     }
-    
-    
     
     //MARK: - Init
     init(title: String, dateAndTime: Date) {

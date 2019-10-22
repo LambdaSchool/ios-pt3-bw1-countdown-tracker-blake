@@ -39,7 +39,6 @@
 			isa = PBXGroup;
 			children = (
 				91FF7BF823593FBA00B50137 /* Products */,
-				91FF7C0F2359407C00B50137 /* NoThanks */,
 				91FF7BF923593FBA00B50137 /* Dodo */,
 			);
 			sourceTree = "<group>";
@@ -57,19 +56,12 @@
 			children = (
 				91FF7C132359414400B50137 /* Dodo.swift */,
 				91FF7C0023593FBA00B50137 /* Main.storyboard */,
-				91FF7C0523593FBB00B50137 /* LaunchScreen.storyboard */,
-			);
-			path = Dodo;
-			sourceTree = "<group>";
-		};
-		91FF7C0F2359407C00B50137 /* NoThanks */ = {
-			isa = PBXGroup;
-			children = (
 				91FF7C0323593FBB00B50137 /* Assets.xcassets */,
 				91FF7BFA23593FBA00B50137 /* AppDelegate.swift */,
 				91FF7C0823593FBB00B50137 /* Info.plist */,
+				91FF7C0523593FBB00B50137 /* LaunchScreen.storyboard */,
 			);
-			path = NoThanks;
+			path = Dodo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

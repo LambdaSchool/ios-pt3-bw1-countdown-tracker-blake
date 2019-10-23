@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Countdown Table Table View Controller-->
+        <!--Countdown Table View Controller-->
         <scene sceneID="HIA-Ph-add">
             <objects>
-                <tableViewController id="e9y-2w-85W" customClass="CountdownTableTableViewController" customModule="Dodo" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="e9y-2w-85W" customClass="CountdownTableViewController" customModule="Dodo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="NP6-nv-Cdx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -40,11 +40,9 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="countdownTimeRemainingLabel" destination="Iac-1X-D2R" id="AzO-MT-bb3"/>
-                                    <outlet property="countdownTitleLabel" destination="u38-p9-n8H" id="YAc-rp-FYj"/>
                                     <outlet property="timeRemainingLabel" destination="Iac-1X-D2R" id="8nn-Ep-E9H"/>
                                     <outlet property="titleLabel" destination="u38-p9-n8H" id="jU4-xy-cLs"/>
-                                    <segue destination="4zg-QV-RUk" kind="show" identifier="ShowCDDetailSegue" id="nMf-8f-iJZ"/>
+                                    <segue destination="4zg-QV-RUk" kind="show" identifier="ShowCountdownSegue" id="nMf-8f-iJZ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -56,7 +54,7 @@
                     <navigationItem key="navigationItem" id="u7m-ce-kqI">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="CJw-WV-I9M">
                             <connections>
-                                <segue destination="4zg-QV-RUk" kind="show" identifier="AddCDSegue" id="PRx-rX-ENW"/>
+                                <segue destination="4zg-QV-RUk" kind="show" identifier="AddCountdownSegue" id="PRx-rX-ENW"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -65,19 +63,19 @@
             </objects>
             <point key="canvasLocation" x="2146.376811594203" y="111.83035714285714"/>
         </scene>
-        <!--View Controller-->
+        <!--Countdown Detail View Controller-->
         <scene sceneID="iMi-jz-lfu">
             <objects>
-                <viewController id="4zg-QV-RUk" sceneMemberID="viewController">
+                <viewController id="4zg-QV-RUk" customClass="CountdownDetailViewController" customModule="Dodo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nUf-Uj-eDq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ycx-AO-NaB">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter title" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ycx-AO-NaB">
                                 <rect key="frame" x="83" y="152" width="248" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                             </textField>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="pWt-03-KTO">
                                 <rect key="frame" x="0.0" y="482" width="414" height="162"/>
@@ -95,8 +93,17 @@
                         <viewLayoutGuide key="safeArea" id="v8U-ZZ-nD4"/>
                     </view>
                     <navigationItem key="navigationItem" id="d62-KP-9F2">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="6EF-0w-5g2"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="6EF-0w-5g2">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="4zg-QV-RUk" id="gNd-8j-9JK"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="datePicker" destination="pWt-03-KTO" id="aqh-mR-V12"/>
+                        <outlet property="textView" destination="p3L-xH-x1G" id="0xK-V7-43N"/>
+                        <outlet property="titleTextField" destination="Ycx-AO-NaB" id="9uB-5M-Ct0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ife-Hx-BYa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -122,6 +129,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="PRx-rX-ENW"/>
+        <segue reference="nMf-8f-iJZ"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -49,10 +49,9 @@ class CountdownTableTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CountdownCell", for: indexPath) as? CountdownTableViewCell else { fatalError("A countdown cell was not found!") }
-        //cell.delegate = self
         //let countdown = countdownFor(indexPath: indexPath)
         //cell.countdown = countdown
-        //cell.updateViews()
+        cell.updateViews()
     
         return cell
     }

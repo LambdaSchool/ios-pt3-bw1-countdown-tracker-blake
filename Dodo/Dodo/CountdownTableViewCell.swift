@@ -16,5 +16,12 @@ class CountdownTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var timeRemainingLabel: UILabel!
     
+    //MARK: - Functions
+    func updateViews() {
+        guard let countdown = countdown else { return }
+        
+        titleLabel.text = countdown.title
+        timeRemainingLabel.text = countdown.readableInterval
+    }
     
 }

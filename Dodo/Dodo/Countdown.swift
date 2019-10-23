@@ -22,7 +22,7 @@ struct Countdown: Codable, Equatable {
         let interval = dateAndTime.timeIntervalSinceNow
         let formatter = DateComponentsFormatter()
         formatter.unitsStyle = .full
-        formatter.allowedUnits = [.day, .minute, .second]
+        formatter.allowedUnits = [.day, .hour, .minute, .second]
         
         return formatter.string(from: interval) ?? ""
     }

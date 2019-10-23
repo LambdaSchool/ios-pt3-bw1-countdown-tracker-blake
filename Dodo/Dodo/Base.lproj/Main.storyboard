@@ -16,28 +16,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CountdownCell" rowHeight="80" id="xJy-u3-xeC" customClass="CountdownTableViewCell" customModule="Dodo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="80"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CountdownCell" rowHeight="84" id="xJy-u3-xeC" customClass="CountdownTableViewCell" customModule="Dodo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="84"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xJy-u3-xeC" id="mdf-It-E4U">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="84"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Countdown Timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u38-p9-n8H">
-                                            <rect key="frame" x="139" y="11" width="137" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Countdown Timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u38-p9-n8H">
+                                            <rect key="frame" x="28" y="11" width="358" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="32 Days, 14 Hours, 27 Minutes and 12 Seconds" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iac-1X-D2R">
-                                            <rect key="frame" x="28" y="48" width="359" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="32 Days, 14 Hours, 27 Minutes and 12 Seconds" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iac-1X-D2R">
+                                            <rect key="frame" x="28" y="48" width="358" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="u38-p9-n8H" firstAttribute="centerX" secondItem="mdf-It-E4U" secondAttribute="centerX" id="6Qg-la-Irq"/>
+                                        <constraint firstItem="u38-p9-n8H" firstAttribute="leading" secondItem="mdf-It-E4U" secondAttribute="leadingMargin" constant="8" id="8tx-LX-s8T"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Iac-1X-D2R" secondAttribute="trailing" constant="8" id="HVR-lF-GZK"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="u38-p9-n8H" secondAttribute="trailing" constant="8" id="ccX-9f-XfR"/>
+                                        <constraint firstItem="Iac-1X-D2R" firstAttribute="centerX" secondItem="mdf-It-E4U" secondAttribute="centerX" id="ect-wg-erM"/>
+                                        <constraint firstItem="u38-p9-n8H" firstAttribute="top" secondItem="mdf-It-E4U" secondAttribute="topMargin" id="gQh-bx-qan"/>
+                                        <constraint firstItem="Iac-1X-D2R" firstAttribute="leading" secondItem="mdf-It-E4U" secondAttribute="leadingMargin" constant="8" id="tRg-V6-caq"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="timeRemainingLabel" destination="Iac-1X-D2R" id="8nn-Ep-E9H"/>

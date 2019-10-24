@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UserNotifications
 
 class CountdownController: Codable {
     //MARK: - Properties
@@ -61,6 +62,7 @@ class CountdownController: Codable {
         
         countdowns.append(countdown)
         countdowns.sort()
+        createNotification(countdown: countdown)
         saveToPersistentStore()
 
         return countdown
@@ -71,6 +73,7 @@ class CountdownController: Codable {
             countdowns.remove(at: index)
         }
         countdowns.sort()
+        deleteNotification(countdown: countdown)
         saveToPersistentStore()
     }
     
@@ -81,9 +84,35 @@ class CountdownController: Codable {
             countdownToUpdate.title = title
             countdownToUpdate.dateAndTime = dateAndTime
             countdowns[unwrappedIndex] = countdownToUpdate
+            deleteNotification(countdown: countdown)
+            createNotification(countdown: countdownToUpdate)
         }
         countdowns.sort()
         saveToPersistentStore()
+    }
+    
+    func createNotification(countdown: Countdown) {
+        let content = UNMutableNotificationContent()
+        content.title = countdown.title
+        content.body = "Countdown complete!"
+        content.sound = UNNotificationSound.default
+        content.badge = 0
+        
+        let triggerDate = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second,], from: countdown.dateAndTime)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)
+        
+        let request = UNNotificationRequest(
+            identifier: countdown.title,
+            content: content,
+            trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(
+            request,
+            withCompletionHandler: nil)
+    }
+    
+    func deleteNotification(countdown: Countdown){
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [countdown.title])
     }
 }
 

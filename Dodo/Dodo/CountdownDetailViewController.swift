@@ -20,7 +20,7 @@ class CountdownDetailViewController: UIViewController {
     }
     //MARK: - Outlets
     @IBOutlet weak var titleTextField: UITextField!
-    @IBOutlet weak var textView: UILabel!
+    @IBOutlet weak var originalDateLabel: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!
     
     //MARK: - Properties
@@ -45,7 +45,7 @@ class CountdownDetailViewController: UIViewController {
     func updateViews() {
         if let countdown = countdown {
             titleTextField.text = countdown.title
-            textView.text = countdown.readableInterval
+            originalDateLabel.text = countdown.readableDate
             datePicker.date = countdown.dateAndTime
             navigationItem.title = countdown.title
         } else {

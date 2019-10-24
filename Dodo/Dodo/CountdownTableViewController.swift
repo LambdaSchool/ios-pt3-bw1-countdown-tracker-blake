@@ -13,9 +13,13 @@ class CountdownTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         countdownController.loadFromPersistentStore()
-        _ = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-            self.tableView.reloadData()
+       _ = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+            for cell in self.tableView.visibleCells {
+                guard let selectedCell = cell as? CountdownTableViewCell else {fatalError("Timer error!")}
+                selectedCell.updateViews()
+            }
         }
+        tableView.tableFooterView = UIView()
     }
     
     override func viewWillAppear(_ animated: Bool) {

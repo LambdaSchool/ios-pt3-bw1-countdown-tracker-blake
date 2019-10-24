@@ -60,9 +60,9 @@ class CountdownController: Codable {
         let countdown = Countdown(title: title, dateAndTime: dateAndTime)
         
         countdowns.append(countdown)
-        
+        countdowns.sort()
         saveToPersistentStore()
-        
+
         return countdown
     }
     
@@ -70,6 +70,7 @@ class CountdownController: Codable {
         if let index = countdowns.firstIndex(of: countdown) {
             countdowns.remove(at: index)
         }
+        countdowns.sort()
         saveToPersistentStore()
     }
     
@@ -81,6 +82,7 @@ class CountdownController: Codable {
             countdownToUpdate.dateAndTime = dateAndTime
             countdowns[unwrappedIndex] = countdownToUpdate
         }
+        countdowns.sort()
         saveToPersistentStore()
     }
 }

@@ -21,7 +21,11 @@ class CountdownTableViewCell: UITableViewCell {
         guard let countdown = countdown else { return }
         
         titleLabel.text = countdown.title
-        timeRemainingLabel.text = countdown.readableInterval
+        if countdown.cdHasFinished {
+            timeRemainingLabel.text = countdown.readableDate
+        } else {
+            timeRemainingLabel.text = countdown.readableInterval
+        }
     }
     
     

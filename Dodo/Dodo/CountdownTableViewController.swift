@@ -14,10 +14,7 @@ class CountdownTableViewController: UITableViewController {
         super.viewDidLoad()
         countdownController.loadFromPersistentStore()
         _ = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-            for cell in self.tableView.visibleCells {
-                guard let selectedCell = cell as? CountdownTableViewCell else {fatalError("Timer error!")}
-                selectedCell.updateViews()
-            }
+            self.tableView.reloadData()
         }
     }
     

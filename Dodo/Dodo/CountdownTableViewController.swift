@@ -27,7 +27,9 @@ class CountdownTableViewController: UITableViewController {
     
     //MARK: - Table View Data Source
     override func numberOfSections(in tableView: UITableView) -> Int {
-        if countdownController.finishedCountdowns.count == 0 {
+        if countdownController.countdowns.count == 0 {
+            return 0
+        } else if countdownController.finishedCountdowns.count == 0 {
             return 1
         } else {
             return 2

@@ -27,6 +27,15 @@ struct Countdown: Codable, Equatable {
         return formatter.string(from: interval) ?? ""
     }
     
+    var readableDate: String {
+        let date = dateAndTime
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM dd, yyyy h:mm a"
+        formatter.locale = Locale(identifier: "en_US")
+        
+        return formatter.string(from: date)
+    }
+    
     //MARK: - Init
     init(title: String, dateAndTime: Date) {
         self.title = title

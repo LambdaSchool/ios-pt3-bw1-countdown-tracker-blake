@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NotificationCenter
 
 class CountdownTableViewController: UITableViewController {
     //MARK: - viewDidLoad
@@ -24,6 +25,13 @@ class CountdownTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
+        NotificationCenter.default.addObserver(forName: UIApplication.willEnterForegroundNotification, object: UIApplication.shared, queue: nil) { (_) in
+            self.tableView.reloadData()
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self)
     }
     
     //MARK: - Properties

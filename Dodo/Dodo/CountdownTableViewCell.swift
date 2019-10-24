@@ -24,4 +24,5 @@ class CountdownTableViewCell: UITableViewCell {
         timeRemainingLabel.text = countdown.readableInterval
     }
     
+    
 }

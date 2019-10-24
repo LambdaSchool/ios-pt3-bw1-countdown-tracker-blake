@@ -45,11 +45,11 @@ class CountdownDetailViewController: UIViewController {
     func updateViews() {
         if let countdown = countdown {
             titleTextField.text = countdown.title
-            originalDateLabel.text = countdown.readableDate
+            originalDateLabel.text = "Original: \(countdown.readableDate)"
             datePicker.date = countdown.dateAndTime
-            navigationItem.title = countdown.title
+            navigationItem.title = "Edit Countdown"
         } else {
-            navigationItem.title = "Add a New Countdown"
+            navigationItem.title = "Add Countdown"
         }
     }
 }

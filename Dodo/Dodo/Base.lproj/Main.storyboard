@@ -82,14 +82,14 @@
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="pWt-03-KTO">
                                 <rect key="frame" x="0.0" y="340" width="414" height="216"/>
                             </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFi-lG-5lV">
-                                <rect key="frame" x="186.33333333333334" y="564" width="41.666666666666657" height="20.333333333333371"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFi-lG-5lV">
+                                <rect key="frame" x="207" y="564" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter title" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ycx-AO-NaB">
-                                <rect key="frame" x="162" y="298" width="90.333333333333314" height="34"/>
+                                <rect key="frame" x="117" y="298" width="180" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                             </textField>
@@ -97,12 +97,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="pWt-03-KTO" firstAttribute="centerY" secondItem="nUf-Uj-eDq" secondAttribute="centerY" id="3sp-5G-dJj"/>
-                            <constraint firstItem="pWt-03-KTO" firstAttribute="top" secondItem="Ycx-AO-NaB" secondAttribute="bottom" constant="8" id="D34-bC-JuS"/>
                             <constraint firstItem="v8U-ZZ-nD4" firstAttribute="trailing" secondItem="pWt-03-KTO" secondAttribute="trailing" id="DxO-UM-mpZ"/>
                             <constraint firstItem="pWt-03-KTO" firstAttribute="leading" secondItem="v8U-ZZ-nD4" secondAttribute="leading" id="FNY-mP-r8O"/>
+                            <constraint firstItem="Ycx-AO-NaB" firstAttribute="leading" secondItem="v8U-ZZ-nD4" secondAttribute="leading" constant="117" id="G3O-en-4iV"/>
                             <constraint firstItem="jFi-lG-5lV" firstAttribute="top" secondItem="pWt-03-KTO" secondAttribute="bottom" constant="8" id="Rdn-gl-nUb"/>
-                            <constraint firstItem="Ycx-AO-NaB" firstAttribute="centerX" secondItem="nUf-Uj-eDq" secondAttribute="centerX" id="X6i-5T-7jf"/>
+                            <constraint firstItem="v8U-ZZ-nD4" firstAttribute="trailing" secondItem="Ycx-AO-NaB" secondAttribute="trailing" constant="117" id="Xou-g9-pwJ"/>
                             <constraint firstItem="jFi-lG-5lV" firstAttribute="centerX" secondItem="nUf-Uj-eDq" secondAttribute="centerX" id="YO3-0R-pF4"/>
+                            <constraint firstItem="pWt-03-KTO" firstAttribute="top" secondItem="Ycx-AO-NaB" secondAttribute="bottom" constant="8" id="i4G-sg-Z83"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="v8U-ZZ-nD4"/>
                     </view>

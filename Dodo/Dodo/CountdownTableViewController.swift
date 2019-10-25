@@ -39,29 +39,17 @@ class CountdownTableViewController: UITableViewController {
     
     //MARK: - Table View Data Source
     override func numberOfSections(in tableView: UITableView) -> Int {
-        if countdownController.countdowns.count == 0 {
-            return 0
-        } else if countdownController.finishedCountdowns.count == 0 {
-            return 1
-        } else {
-            return 2
-        }
+        return Category.allCases.count
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 0 {
-            return "Active Countdowns"
-        } else {
-            return "Finished Countdowns"
-        }
+        let selectedCase = Category.allCases[section]
+        return selectedCase.rawValue
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return countdownController.unfinishedCountdowns.count
-        } else {
-            return countdownController.finishedCountdowns.count
-        }
+        let selectedCase = Category.allCases[section]
+        return countdownController.countdowns(in: selectedCase).count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -96,10 +84,8 @@ class CountdownTableViewController: UITableViewController {
     }
     
     private func countdownFor(indexPath: IndexPath) -> Countdown {
-        if indexPath.section == 0 {
-            return countdownController.unfinishedCountdowns[indexPath.row]
-        } else {
-            return countdownController.finishedCountdowns[indexPath.row]
-        }
+        let selectedCase = Category.allCases[indexPath.section]
+        let countdowns = countdownController.countdowns(in: selectedCase)
+        return countdowns[indexPath.row]
     }
 }

@@ -11,6 +11,7 @@
 		91491374235EAE1E00BC12FD /* CountdownController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91491373235EAE1E00BC12FD /* CountdownController.swift */; };
 		91491376235FC23200BC12FD /* CountdownTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91491375235FC23200BC12FD /* CountdownTableViewController.swift */; };
 		91491378235FE45B00BC12FD /* CountdownTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91491377235FE45B00BC12FD /* CountdownTableViewCell.swift */; };
+		914B80B52363991C00DDC300 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914B80B42363991C00DDC300 /* Category.swift */; };
 		9188158B235FED5B005A906B /* CountdownDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9188158A235FED5B005A906B /* CountdownDetailViewController.swift */; };
 		9188158D23612327005A906B /* Countdown+Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9188158C23612327005A906B /* Countdown+Comparable.swift */; };
 		91FF7BFB23593FBA00B50137 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FF7BFA23593FBA00B50137 /* AppDelegate.swift */; };
@@ -25,6 +26,7 @@
 		91491373235EAE1E00BC12FD /* CountdownController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownController.swift; sourceTree = "<group>"; };
 		91491375235FC23200BC12FD /* CountdownTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownTableViewController.swift; sourceTree = "<group>"; };
 		91491377235FE45B00BC12FD /* CountdownTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownTableViewCell.swift; sourceTree = "<group>"; };
+		914B80B42363991C00DDC300 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		9188158A235FED5B005A906B /* CountdownDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownDetailViewController.swift; sourceTree = "<group>"; };
 		9188158C23612327005A906B /* Countdown+Comparable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Countdown+Comparable.swift"; sourceTree = "<group>"; };
 		91FF7BF723593FBA00B50137 /* Dodo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dodo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +74,7 @@
 				91491377235FE45B00BC12FD /* CountdownTableViewCell.swift */,
 				9188158A235FED5B005A906B /* CountdownDetailViewController.swift */,
 				9188158C23612327005A906B /* Countdown+Comparable.swift */,
+				914B80B42363991C00DDC300 /* Category.swift */,
 				91FF7C0023593FBA00B50137 /* Main.storyboard */,
 				91FF7C0323593FBB00B50137 /* Assets.xcassets */,
 				91FF7C0523593FBB00B50137 /* LaunchScreen.storyboard */,
@@ -158,6 +161,7 @@
 				91491374235EAE1E00BC12FD /* CountdownController.swift in Sources */,
 				9188158B235FED5B005A906B /* CountdownDetailViewController.swift in Sources */,
 				91491378235FE45B00BC12FD /* CountdownTableViewCell.swift in Sources */,
+				914B80B52363991C00DDC300 /* Category.swift in Sources */,
 				91FF7C142359414400B50137 /* Countdown.swift in Sources */,
 				91491372235EA19900BC12FD /* SceneDelegate.swift in Sources */,
 				9188158D23612327005A906B /* Countdown+Comparable.swift in Sources */,

@@ -80,32 +80,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="pWt-03-KTO">
-                                <rect key="frame" x="0.0" y="340" width="414" height="216"/>
-                            </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFi-lG-5lV">
-                                <rect key="frame" x="207" y="564" width="0.0" height="0.0"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFi-lG-5lV">
+                                <rect key="frame" x="20" y="564" width="374" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter title" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ycx-AO-NaB">
-                                <rect key="frame" x="117" y="298" width="180" height="34"/>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="pWt-03-KTO">
+                                <rect key="frame" x="0.0" y="286" width="414" height="216"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </datePicker>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter title" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ycx-AO-NaB">
+                                <rect key="frame" x="20" y="103" width="374" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                             </textField>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wvM-7r-NdJ">
+                                <rect key="frame" x="0.0" y="145" width="414" height="133"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="pWt-03-KTO" firstAttribute="centerY" secondItem="nUf-Uj-eDq" secondAttribute="centerY" id="3sp-5G-dJj"/>
-                            <constraint firstItem="v8U-ZZ-nD4" firstAttribute="trailing" secondItem="pWt-03-KTO" secondAttribute="trailing" id="DxO-UM-mpZ"/>
-                            <constraint firstItem="pWt-03-KTO" firstAttribute="leading" secondItem="v8U-ZZ-nD4" secondAttribute="leading" id="FNY-mP-r8O"/>
-                            <constraint firstItem="Ycx-AO-NaB" firstAttribute="leading" secondItem="v8U-ZZ-nD4" secondAttribute="leading" constant="117" id="G3O-en-4iV"/>
-                            <constraint firstItem="jFi-lG-5lV" firstAttribute="top" secondItem="pWt-03-KTO" secondAttribute="bottom" constant="8" id="Rdn-gl-nUb"/>
-                            <constraint firstItem="v8U-ZZ-nD4" firstAttribute="trailing" secondItem="Ycx-AO-NaB" secondAttribute="trailing" constant="117" id="Xou-g9-pwJ"/>
-                            <constraint firstItem="jFi-lG-5lV" firstAttribute="centerX" secondItem="nUf-Uj-eDq" secondAttribute="centerX" id="YO3-0R-pF4"/>
-                            <constraint firstItem="pWt-03-KTO" firstAttribute="top" secondItem="Ycx-AO-NaB" secondAttribute="bottom" constant="8" id="i4G-sg-Z83"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="v8U-ZZ-nD4"/>
                     </view>
                     <navigationItem key="navigationItem" id="d62-KP-9F2">
@@ -116,6 +113,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="categoryPicker" destination="wvM-7r-NdJ" id="Via-Fe-yvI"/>
                         <outlet property="datePicker" destination="pWt-03-KTO" id="aqh-mR-V12"/>
                         <outlet property="originalDateLabel" destination="jFi-lG-5lV" id="z2K-uU-WTr"/>
                         <outlet property="titleTextField" destination="Ycx-AO-NaB" id="9uB-5M-Ct0"/>

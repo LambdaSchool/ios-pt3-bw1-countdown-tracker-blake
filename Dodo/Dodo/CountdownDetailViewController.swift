@@ -12,6 +12,10 @@ class CountdownDetailViewController: UIViewController {
     //MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        categoryPicker.delegate = self
+        categoryPicker.dataSource = self
+        
         updateViews()
         
         let tap = UITapGestureRecognizer(target: self.view,
@@ -22,6 +26,7 @@ class CountdownDetailViewController: UIViewController {
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var originalDateLabel: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var categoryPicker: UIPickerView!
     
     //MARK: - Properties
     var countdownController: CountdownController?
@@ -29,13 +34,17 @@ class CountdownDetailViewController: UIViewController {
     
     //MARK: - Actions
     @IBAction func saveButtonPressed(_ sender: Any) {
+        let categoryIndex = categoryPicker.selectedRow(inComponent: 0)
+        let categoryCase = Category.allCases[categoryIndex]
         if let countdown = countdown {
-            countdownController?.updateTitleOrDate(title: titleTextField.text ?? "",
+            countdownController?.updateCountdown(title: titleTextField.text ?? "",
                                                    dateAndTime: datePicker.date,
+                                                   category: categoryCase,
                                                    for: countdown)
         } else {
             countdownController?.createCountdown(title: titleTextField.text ?? "",
-                                                 dateAndTime: datePicker.date)
+                                                 dateAndTime: datePicker.date,
+                                                 category: categoryCase)
         }
         _ = navigationController?.popViewController(animated: true)
     }
@@ -47,9 +56,27 @@ class CountdownDetailViewController: UIViewController {
             titleTextField.text = countdown.title
             originalDateLabel.text = "Original: \(countdown.readableDate)"
             datePicker.date = countdown.dateAndTime
+            categoryPicker.selectRow(Category.allCases.firstIndex(of: countdown.category)!, inComponent: 0, animated: false)
             navigationItem.title = "Edit Countdown"
         } else {
             navigationItem.title = "Add Countdown"
         }
+    }
+}
+
+extension CountdownDetailViewController: UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return Category.allCases.count
+    }
+}
+
+extension CountdownDetailViewController: UIPickerViewDelegate {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        let selectedCase = Category.allCases[row]
+        return selectedCase.rawValue.capitalized
     }
 }

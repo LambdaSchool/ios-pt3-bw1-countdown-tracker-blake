@@ -11,7 +11,8 @@ import Foundation
 struct Countdown: Codable, Equatable {
     //MARK: - Properties
     var title:          String,
-        dateAndTime:    Date
+        dateAndTime:    Date,
+        category:       Category
     
     //MARK: - Computed Properties
     var cdHasFinished: Bool {
@@ -37,8 +38,9 @@ struct Countdown: Codable, Equatable {
     }
     
     //MARK: - Init
-    init(title: String, dateAndTime: Date) {
+    init(title: String, dateAndTime: Date, category: Category) {
         self.title = title
         self.dateAndTime = dateAndTime
+        self.category = category
     }
 }

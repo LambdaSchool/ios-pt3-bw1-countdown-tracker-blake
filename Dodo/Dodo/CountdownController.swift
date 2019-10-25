@@ -57,8 +57,8 @@ class CountdownController: Codable {
     
     //MARK: - Functions
     @discardableResult
-    func createCountdown(title: String, dateAndTime: Date) -> Countdown {
-        let countdown = Countdown(title: title, dateAndTime: dateAndTime)
+    func createCountdown(title: String, dateAndTime: Date, category: Category) -> Countdown {
+        let countdown = Countdown(title: title, dateAndTime: dateAndTime, category: category)
         
         countdowns.append(countdown)
         countdowns.sort()
@@ -77,12 +77,13 @@ class CountdownController: Codable {
         saveToPersistentStore()
     }
     
-    func updateTitleOrDate(title: String, dateAndTime: Date, for countdown: Countdown) {
+    func updateCountdown(title: String, dateAndTime: Date, category: Category, for countdown: Countdown) {
         let index = countdowns.firstIndex(of: countdown)
         if let unwrappedIndex = index {
             var countdownToUpdate = countdowns[unwrappedIndex]
             countdownToUpdate.title = title
             countdownToUpdate.dateAndTime = dateAndTime
+            countdownToUpdate.category = category
             countdowns[unwrappedIndex] = countdownToUpdate
             deleteNotification(countdown: countdown)
             createNotification(countdown: countdownToUpdate)

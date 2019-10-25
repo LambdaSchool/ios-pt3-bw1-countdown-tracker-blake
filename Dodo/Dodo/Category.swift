@@ -12,7 +12,7 @@ enum Category: String, CaseIterable, Codable {
     case other
     case book
     case game
-    case vacation
-    case music
     case movie
+    case music
+    case vacation
 }

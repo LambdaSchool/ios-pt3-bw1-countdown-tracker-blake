@@ -22,7 +22,7 @@ class CountdownController: Codable {
         return countdowns.filter { $0.cdHasFinished == false }
     }
     
-    //MARK: - Persistent
+    //MARK: - Persistence
     private var countdownListURL: URL? {
         let fileManager = FileManager.default
         guard let documents = try? fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
@@ -53,6 +53,31 @@ class CountdownController: Codable {
         } catch  {
             print("Error loading countdowns data: \(error)")
         }
+    }
+    
+    //MARK: - Notifications
+    func createNotification(countdown: Countdown) {
+        let content = UNMutableNotificationContent()
+        content.title = countdown.title
+        content.body = "Countdown complete!"
+        content.sound = UNNotificationSound.default
+        content.badge = 0
+        
+        let triggerDate = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second,], from: countdown.dateAndTime)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)
+        
+        let request = UNNotificationRequest(
+            identifier: countdown.title,
+            content: content,
+            trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(
+            request,
+            withCompletionHandler: nil)
+    }
+    
+    func deleteNotification(countdown: Countdown){
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [countdown.title])
     }
     
     //MARK: - Functions
@@ -92,28 +117,8 @@ class CountdownController: Codable {
         saveToPersistentStore()
     }
     
-    func createNotification(countdown: Countdown) {
-        let content = UNMutableNotificationContent()
-        content.title = countdown.title
-        content.body = "Countdown complete!"
-        content.sound = UNNotificationSound.default
-        content.badge = 0
-        
-        let triggerDate = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second,], from: countdown.dateAndTime)
-        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)
-        
-        let request = UNNotificationRequest(
-            identifier: countdown.title,
-            content: content,
-            trigger: trigger)
-        
-        UNUserNotificationCenter.current().add(
-            request,
-            withCompletionHandler: nil)
-    }
-    
-    func deleteNotification(countdown: Countdown){
-        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [countdown.title])
+    func countdowns(in category: Category) -> [Countdown] {
+        return countdowns.filter {$0.category == category}
     }
 }
 

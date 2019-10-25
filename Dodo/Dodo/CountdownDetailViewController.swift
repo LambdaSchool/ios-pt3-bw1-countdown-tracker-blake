@@ -34,6 +34,13 @@ class CountdownDetailViewController: UIViewController {
     
     //MARK: - Actions
     @IBAction func saveButtonPressed(_ sender: Any) {
+        if titleTextField.text == "" {
+            let alert = UIAlertController(title: "Countdown has no title.", message: "Please give your countdown a title!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "I will add a title!", style: .default, handler: nil))
+            self.present(alert, animated: true)
+            return
+        }
+        
         let categoryIndex = categoryPicker.selectedRow(inComponent: 0)
         let categoryCase = Category.allCases[categoryIndex]
         if let countdown = countdown {

@@ -22,6 +22,11 @@ class CountdownDetailViewController: UIViewController {
                                          action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        titleTextField.becomeFirstResponder()
+    }
+    
     //MARK: - Outlets
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var originalDateLabel: UILabel!

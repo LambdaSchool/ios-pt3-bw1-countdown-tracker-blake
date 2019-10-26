@@ -49,6 +49,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		917C863B2363D7930014FF0E /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				91491375235FC23200BC12FD /* CountdownTableViewController.swift */,
+				9188158A235FED5B005A906B /* CountdownDetailViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		917C863C2363D7D10014FF0E /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				91FF7C0023593FBA00B50137 /* Main.storyboard */,
+				91FF7C0523593FBB00B50137 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		917C863D2363D8040014FF0E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				91FF7C0323593FBB00B50137 /* Assets.xcassets */,
+				91FF7BFA23593FBA00B50137 /* AppDelegate.swift */,
+				91491371235EA19900BC12FD /* SceneDelegate.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		917C863E2363D82E0014FF0E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				91FF7C132359414400B50137 /* Countdown.swift */,
+				9188158C23612327005A906B /* Countdown+Comparable.swift */,
+				914B80B42363991C00DDC300 /* Category.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		917C863F2363D84F0014FF0E /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				91491373235EAE1E00BC12FD /* CountdownController.swift */,
+			);
+			path = "Model Controller";
+			sourceTree = "<group>";
+		};
+		917C86402363D85A0014FF0E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				91491377235FE45B00BC12FD /* CountdownTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		91FF7BEE23593FBA00B50137 = {
 			isa = PBXGroup;
 			children = (
@@ -68,19 +122,13 @@
 		91FF7BF923593FBA00B50137 /* Dodo */ = {
 			isa = PBXGroup;
 			children = (
-				91FF7C132359414400B50137 /* Countdown.swift */,
-				91491373235EAE1E00BC12FD /* CountdownController.swift */,
-				91491375235FC23200BC12FD /* CountdownTableViewController.swift */,
-				91491377235FE45B00BC12FD /* CountdownTableViewCell.swift */,
-				9188158A235FED5B005A906B /* CountdownDetailViewController.swift */,
-				9188158C23612327005A906B /* Countdown+Comparable.swift */,
-				914B80B42363991C00DDC300 /* Category.swift */,
-				91FF7C0023593FBA00B50137 /* Main.storyboard */,
-				91FF7C0323593FBB00B50137 /* Assets.xcassets */,
-				91FF7C0523593FBB00B50137 /* LaunchScreen.storyboard */,
+				917C86402363D85A0014FF0E /* View */,
+				917C863B2363D7930014FF0E /* View Controller */,
+				917C863C2363D7D10014FF0E /* Storyboard */,
+				917C863E2363D82E0014FF0E /* Model */,
+				917C863F2363D84F0014FF0E /* Model Controller */,
+				917C863D2363D8040014FF0E /* Resources */,
 				91FF7C0823593FBB00B50137 /* Info.plist */,
-				91FF7BFA23593FBA00B50137 /* AppDelegate.swift */,
-				91491371235EA19900BC12FD /* SceneDelegate.swift */,
 			);
 			path = Dodo;
 			sourceTree = "<group>";
